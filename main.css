@@ -1,0 +1,57 @@
+:root{
+  --car-width: 50px;
+  --car-height: 50px;
+} 
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(5, var(--car-width));
+  grid-template-rows: repeat(9, var(--car-height));
+  position: relative;
+  overflow: hidden;
+  transform: rotate(90deg);
+}
+
+.track {
+  background-color: rgba(20, 20, 20, 0.1);
+}
+
+#x {
+  position: absolute;
+  transform-origin: center;
+  width: calc(100% - var(--car-width));
+  height: calc(100% - var(--car-height));
+}
+
+#y {
+  position: absolute;
+  transform-origin: 0 0;
+  height: 100%;
+}
+
+#car {
+  width: var(--car-width);
+  height: var(--car-height);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: center;
+  border-radius: 0.5rem;
+  scale: 0.6;
+  background: linear-gradient(rgba(20, 20, 20, 0.1), rgba(20, 20, 20, 0.3));
+}
